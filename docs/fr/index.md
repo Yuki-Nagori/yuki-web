@@ -13,7 +13,9 @@ hero:
 features:
   - icon: 🎨
     title: Aide-mémoire Tailwind CSS
-    details: Référence rapide des classes utilitaires — mise en page, responsive, mode sombre, états d'interaction, badges, etc.
+    details:
+      Référence rapide des classes utilitaires — mise en page, responsive, mode
+      sombre, états d'interaction, badges, etc.
     link: /zh/tailwind
     linkText: Voir les détails →
 ---

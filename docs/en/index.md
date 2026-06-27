@@ -13,7 +13,9 @@ hero:
 features:
   - icon: 🎨
     title: Tailwind CSS Cheatsheet
-    details: Quick reference for utility classes — layout, responsive design, dark mode, interaction states, badges and more.
+    details:
+      Quick reference for utility classes — layout, responsive design, dark
+      mode, interaction states, badges and more.
     link: /zh/tailwind
     linkText: View details →
 ---
