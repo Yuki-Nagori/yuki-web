@@ -54,8 +54,8 @@ export default defineConfig({
         outline: { label: '页面导航' },
         lastUpdatedText: '最后更新',
         footer: {
-          message: 'Yuki 的个人学习网站',
-          copyright: 'Copyright © 2026 Yuki',
+          message: `© ${new Date().getFullYear()} Yuki 版权所有`,
+          copyright: '<a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">浙ICP备2026034080号-1</a>'
         },
       },
     },
@@ -81,8 +81,8 @@ export default defineConfig({
         outline: { label: 'On this page' },
         lastUpdatedText: 'Last updated',
         footer: {
-          message: "Yuki's personal learning site",
-          copyright: 'Copyright © 2026 Yuki',
+          message: `© ${new Date().getFullYear()} Yuki. All rights reserved.`,
+          copyright: '<a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">浙ICP备2026034080号-1</a>'
         },
       },
     },
@@ -108,8 +108,8 @@ export default defineConfig({
         outline: { label: 'このページの内容' },
         lastUpdatedText: '最終更新',
         footer: {
-          message: 'Yuki の個人学習サイト',
-          copyright: 'Copyright © 2026 Yuki',
+          message: `© ${new Date().getFullYear()} Yuki. 著作権所有。`,
+          copyright: '<a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">浙ICP备2026034080号-1</a>'
         },
       },
     },
@@ -135,8 +135,8 @@ export default defineConfig({
         outline: { label: 'Sur cette page' },
         lastUpdatedText: 'Dernière mise à jour',
         footer: {
-          message: "Site d'apprentissage personnel de Yuki",
-          copyright: 'Copyright © 2026 Yuki',
+          message: `© ${new Date().getFullYear()} Yuki. Tous droits réservés.`,
+          copyright: '<a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">浙ICP备2026034080号-1</a>'
         },
       },
     },
@@ -162,8 +162,8 @@ export default defineConfig({
         outline: { label: 'Содержание' },
         lastUpdatedText: 'Последнее обновление',
         footer: {
-          message: 'Личный сайт обучения Yuki',
-          copyright: 'Copyright © 2026 Yuki',
+          message: `© ${new Date().getFullYear()} Yuki. Все права защищены.`,
+          copyright: '<a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">浙ICP备2026034080号-1</a>'
         },
       },
     },
