@@ -1,0 +1,8 @@
+node_modules/
+dist/
+docs/.vitepress/cache
+.DS_Store
+.eslintcache
+.vscode/
+.idea/
+record/
