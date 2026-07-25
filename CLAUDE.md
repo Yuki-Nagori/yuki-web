@@ -107,8 +107,7 @@ docs/
 - **多语言内容**：放在对应语言目录 `docs/<locale>/` 下，文件名作为路由路径。
 - **主题和配置**：放在 `docs/.vitepress/` 下。
 - 文件名使用小写字母，连字符分隔（如 `my-notes.md`）。
-- 新内容添加到对应语言的目录下即可；在 `config.mts` 的
-  `locales.<locale>.themeConfig.nav` 和 `sidebar` 中添加导航条目。
+- 新内容添加到对应语言目录后，在 `nav.ts` 中添加导航/侧边栏条目。
 
 ## Lint 与格式化配置
 
