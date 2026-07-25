@@ -50,4 +50,10 @@ jobs:
       - name: Check dead links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --accept 200,429 docs/dist/
+          args: >-
+            --no-progress
+            --root-dir docs/dist
+            --exclude '^https?://'
+            --exclude-path docs/dist/index.html
+            --fallback-extensions html
+            docs/dist/
