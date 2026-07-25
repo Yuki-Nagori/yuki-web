@@ -38,9 +38,8 @@
 ### 1.1 TypeScript 配置补全
 
 - [x] 启用 `forceConsistentCasingInFileNames: true`（跨 OS 兼容）
-- [ ] 添加 `tsconfig.node.json`
-      分离 Node 工具链配置（eslint、prettier、vitepress config）
-- [ ] 确认 `include` 覆盖所有 `.ts`/`.vue` 文件
+- [x] 添加 `tsconfig.node.json` 分离 Node 工具链配置（vitest.config.ts、tests/）
+- [x] 确认 `include` 覆盖所有 `.ts`/`.vue` 文件
 
 ### 1.2 package.json 增强
 
