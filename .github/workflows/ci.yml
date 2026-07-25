@@ -53,5 +53,5 @@ jobs:
           args: >-
             --no-progress
             --root-dir docs/dist
-            --exclude 'https://beian.miit.gov.cn'
+            --exclude '^https?://'
             docs/dist/
