@@ -142,8 +142,8 @@ docs/
 | 依赖                       | 用途                                                                | 优先级 |
 | -------------------------- | ------------------------------------------------------------------- | ------ |
 | `vue`                      | 已有                                                                | ✅     |
-| `@vueuse/core`             | Vue 组合式工具库（useFetch、useStorage、useDark、useMediaQuery 等） | 高     |
-| `zod`                      | API 返回值运行时校验（TypeScript 类型编译后不保运行时安全）         | 高     |
+| `@vueuse/core`             | Vue 组合式工具库（useFetch、useStorage、useDark、useMediaQuery 等） | ✅     |
+| `zod`                      | API 返回值运行时校验（TypeScript 类型编译后不保运行时安全）         | ✅     |
 | `pinia`                    | 跨组件状态管理（用户状态、后端数据缓存等）                          | 中     |
 | `@vueuse/head`             | 动态 head 管理（或直接用 VitePress 内建方案）                       | 中     |
 | `unplugin-vue-components`  | 自动导入组件                                                        | 中     |
@@ -159,9 +159,9 @@ docs/
 
 | 依赖               | 用途                  | 优先级 |
 | ------------------ | --------------------- | ------ |
-| `husky`            | Git hooks 管理        | 高     |
-| `lint-staged`      | 只对暂存文件运行 lint | 高     |
-| `vitest`           | 单元测试框架          | 中     |
+| `husky`            | Git hooks 管理        | ✅     |
+| `lint-staged`      | 只对暂存文件运行 lint | ✅     |
+| `vitest`           | 单元测试框架          | ✅     |
 | `@playwright/test` | E2E 测试              | 低     |
 
 ---
