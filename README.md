@@ -18,7 +18,7 @@ Yuki 的个人网站，基于 **VitePress + TypeScript + Tailwind CSS**
 ### 环境要求
 
 - Node.js >= 18
-- Yarn
+- Yarn >= 1.22
 
 ### 安装
 
@@ -32,38 +32,19 @@ yarn install
 
 ## 开发命令
 
-### 核心命令
-
 ```bash
-yarn docs:dev       # 启动开发服务器（自动修复代码风格）
-yarn docs:build     # 构建生产版本（检查代码质量）
+yarn docs:dev       # 启动开发服务器（快速启动）
+yarn docs:dev:full  # 启动开发服务器（全量检查后启动）
+yarn docs:build     # 生产构建（type-check + test + build）
 yarn docs:preview   # 预览构建结果
-```
-
-### 代码质量命令
-
-```bash
-yarn lint           # 检查 ESLint 问题
-yarn lint:fix       # 自动修复 ESLint 问题
-yarn format         # 格式化代码
-yarn format:check   # 检查代码格式
+yarn test           # 运行测试
+yarn test:watch     # 测试监视模式
+yarn lint           # ESLint 检查
+yarn lint:fix       # ESLint 自动修复
+yarn format         # Prettier 格式化
+yarn format:check   # Prettier 格式检查
 yarn type-check     # TypeScript 类型检查
 ```
-
-### 命令绑定说明
-
-`yarn docs:dev` 自动执行：
-
-1. `yarn lint:fix` — 自动修复 ESLint 问题
-2. `yarn format` — 格式化代码
-3. `vitepress dev docs` — 启动开发服务器
-
-`yarn docs:build` 自动执行：
-
-1. `yarn lint` — 检查 ESLint 问题（不通过则中断）
-2. `yarn format:check` — 检查代码格式（不通过则中断）
-3. `yarn type-check` — TypeScript 类型检查（不通过则中断）
-4. `vitepress build docs` — 构建生产版本
 
 ## 项目结构
 
@@ -71,29 +52,57 @@ yarn type-check     # TypeScript 类型检查
 yuki-web/
 ├── docs/
 │   ├── .vitepress/
-│   │   ├── config.mts          # 站点配置（多语言、导航、侧边栏）
-│   │   └── theme/              # 自定义主题
-│   ├── index.md                # 根入口（浏览器语言检测重定向）
-│   ├── zh/                     # 简体中文
-│   ├── en/                     # English
-│   ├── ja/                     # 日本語
-│   ├── fr/                     # Français
-│   └── ru/                     # Русский
-├── .github/workflows/ci.yml    # CI/CD 配置
-├── bin/setup.sh                # 安装脚本
-├── eslint.config.js            # ESLint 配置
-├── prettier.config.js          # Prettier 配置
-├── tsconfig.json               # TypeScript 配置
-└── package.json                # 项目依赖与脚本
+│   │   ├── config.mts          # 站点配置（thin layer，组装入口）
+│   │   ├── nav.ts              # 导航/侧边栏数据
+│   │   ├── config/             # 站点功能模块
+│   │   │   ├── head.ts         # head 标签生成
+│   │   │   └── sitemap.ts      # sitemap.xml 生成
+│   │   ├── i18n/               # 固定 UI 翻译
+│   │   ├── theme/              # 自定义主题
+│   │   └── utils/              # 工具函数
+│   ├── public/                 # 静态资源
+│   ├── index.md                # 根入口（语言重定向）
+│   ├── zh/、en/、ja/、fr/、ru/ # 各语言内容
+├── tests/                      # 单元测试
+├── .github/workflows/ci.yml    # CI 配置
+├── .husky/pre-commit           # pre-commit hook
+└── bin/setup.sh                # 安装脚本
 ```
+
+## 依赖说明
+
+### 核心
+
+| 依赖                                | 用途                                |
+| ----------------------------------- | ----------------------------------- |
+| `vitepress`                         | 静态站点生成器，Vite + Vue 3 驱动   |
+| `vue`                               | UI 框架                             |
+| `tailwindcss` + `@tailwindcss/vite` | 原子化 CSS 框架，通过 Vite 插件集成 |
+
+### 工具库
+
+| 依赖           | 用途                                                 |
+| -------------- | ---------------------------------------------------- |
+| `@vueuse/core` | Vue 组合式工具库（useFetch、useStorage、useDark 等） |
+| `zod`          | 运行时数据校验，API 返回值类型安全保障               |
+| `sitemap`      | 构建时自动生成 sitemap.xml                           |
+
+### 开发工具
+
+| 依赖                                                 | 用途                                      |
+| ---------------------------------------------------- | ----------------------------------------- |
+| `typescript`                                         | 类型检查                                  |
+| `eslint` + `eslint-plugin-vue` + `typescript-eslint` | 代码质量检查                              |
+| `prettier`                                           | 代码格式化                                |
+| `vitest`                                             | 单元测试框架                              |
+| `husky` + `lint-staged`                              | pre-commit hook，提交前自动 lint + format |
 
 ## 配置说明
 
-- **TypeScript**: `tsconfig.json` — 严格模式，路径别名 `@/*` →
-  `docs/.vitepress/*`
+- **TypeScript**: `tsconfig.json` — 严格模式，`forceConsistentCasingInFileNames`
 - **ESLint**: `eslint.config.js` — flat config，集成 Vue + TypeScript
 - **Prettier**: `prettier.config.js` — 无分号、单引号、2 空格缩进
-- **VitePress**: `docs/.vitepress/config.mts` — 多语言配置、导航、侧边栏
+- **VitePress**: `docs/.vitepress/config.mts` — 多语言、导航、侧边栏
 - **Tailwind CSS**: 通过 `@tailwindcss/vite` 插件集成
 
 ## 常见问题
@@ -103,9 +112,10 @@ yuki-web/
 分别检查各项：
 
 ```bash
+yarn type-check    # 类型错误
+yarn test          # 测试失败
 yarn lint          # ESLint 错误
 yarn format:check  # 格式问题
-yarn type-check    # 类型错误
 ```
 
 ### 自动修复
