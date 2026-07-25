@@ -54,4 +54,5 @@ jobs:
             --no-progress
             --root-dir docs/dist
             --exclude '^https?://'
+            --fallback-extensions html
             docs/dist/
