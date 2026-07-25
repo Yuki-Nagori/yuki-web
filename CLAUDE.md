@@ -17,10 +17,13 @@ TypeScript + Tailwind CSS** 构建的多语言文档站点。
 # 安装依赖
 yarn install
 
-# 开发服务器（自动执行 lint:fix + format + vitepress dev）
+# 开发服务器（快速启动，lint/format 由 pre-commit hook 保证）
 yarn docs:dev
 
-# 生产构建（自动执行 lint + format:check + type-check + vitepress build）
+# 开发服务器（全量检查后启动，需要时可手动执行）
+yarn docs:dev:full
+
+# 生产构建（type-check + test + build）
 yarn docs:build
 
 # 预览构建产物
@@ -43,9 +46,12 @@ yarn test
 
 ### 命令绑定说明
 
-- **`yarn docs:dev`**：`lint:fix` → `format` → `vitepress dev docs`
-- **`yarn docs:build`**：`lint` → `format:check` → `type-check` →
-  `vitepress build docs`
+- **`yarn docs:dev`**：直接启动 `vitepress dev docs`（lint/format 由 pre-commit
+  hook + 编辑器 format-on-save 保证）
+- **`yarn docs:dev:full`**：`lint:fix` → `format` →
+  `vitepress dev docs`（全量检查后启动）
+- **`yarn docs:build`**：`type-check` → `test` →
+  `vitepress build docs`（类型检查 + 测试 + 构建）
 
 ## 架构
 
