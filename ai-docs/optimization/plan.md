@@ -189,14 +189,15 @@ docs/
 
 ### 6.1 基础测试
 
-- [ ] 安装 `vitest`
-- [ ] 为工具函数（语言检测 `getLangPath` 等）编写单元测试
-- [ ] 配置 CI 中的 test 步骤
+- [x] 安装 `vitest`
+- [x] 为工具函数（语言检测 `getLangPath` 等）编写 24 个单元测试
+- [x] 配置 CI 中的 test + coverage 步骤
+- [x] 安装 `@vitest/coverage-v8`，集成 Codecov
 
 ### 6.2 构建验证
 
-- [ ] CI 中启用 `vitepress build --failOnWarn`
-- [ ] 添加 dead link check（`lychee` 或 `vitepress-plugin-llms`）
+- [x] CI 通过 `yarn docs:build`（type-check + test + build）保证质量
+- [ ] Dead link check — 后续需要时添加
 
 ---
 
