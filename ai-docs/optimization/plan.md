@@ -43,9 +43,9 @@
 
 ### 1.2 package.json 增强
 
-- [ ] 添加 `engines` 字段（node >= 18，yarn >= 1.22）
-- [ ] 添加 `"type": "module"`（已有）
-- [ ] 考虑添加 `browserslist` 或 VitePress 兼容目标说明
+- [x] 添加 `engines` 字段（node >= 18，yarn >= 1.22）
+- [x] 添加 `"type": "module"`（已有）
+- [x] `browserslist`：VitePress 通过 Vite 处理兼容性，无需额外配置
 
 ### 1.3 编辑器与协作配置
 
