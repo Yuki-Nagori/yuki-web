@@ -1,3 +1,8 @@
+/**
+ * @file Vitest 测试框架配置
+ * @brief 配置测试环境、路径别名、测试文件匹配规则
+ */
+
 import { defineConfig } from 'vitest/config'
 import { resolve } from 'path'
 
@@ -8,9 +13,7 @@ export default defineConfig({
     },
   },
   test: {
-    // 测试环境：jsdom 支持浏览器 API mock（navigator、window 等）
     environment: 'node',
-    // 测试文件目录
     include: ['tests/**/*.test.ts'],
   },
 })

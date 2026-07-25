@@ -1,60 +1,59 @@
 /**
- * 语言检测工具函数
- * 纯函数，无浏览器 API 依赖，方便单元测试
+ * @file 语言检测与路径映射工具
+ * @brief 提供浏览器语言到站点路径的映射，以及根路径判断
  */
 
-/** 语言到路径的映射 */
+/**
+ * 语言到站点路径的映射表
+ * @note 每个语言包含基础码和常用变体，未匹配的变体回退到前缀匹配
+ */
 export const langMap: Record<string, string> = {
-  // 中文
   zh: '/zh/',
   'zh-CN': '/zh/',
   'zh-TW': '/zh/',
   'zh-HK': '/zh/',
   'zh-SG': '/zh/',
-  // 英文
   en: '/en/',
   'en-US': '/en/',
   'en-GB': '/en/',
   'en-AU': '/en/',
   'en-CA': '/en/',
-  // 日语
   ja: '/ja/',
   'ja-JP': '/ja/',
-  // 法语
   fr: '/fr/',
   'fr-FR': '/fr/',
   'fr-CA': '/fr/',
   'fr-BE': '/fr/',
-  // 俄语
   ru: '/ru/',
   'ru-RU': '/ru/',
 }
 
 /**
  * 根据浏览器 language 字符串获取对应的站点路径
- * @param language - navigator.language 的值
- * @returns 语言路径，如 '/zh/'、'/en/' 等，默认返回 '/zh/'
+ * @param language - navigator.language 的值，未传时默认 zh
+ * @returns 语言路径，如 `/zh/`、`/en/`，未知语言默认返回 `/zh/`
  */
 export function getLangPath(language?: string): string {
   const lang = language || 'zh'
 
-  // 直接匹配
   if (langMap[lang]) {
     return langMap[lang]
   }
 
-  // 匹配语言前缀（如 'zh-CN' → 'zh'）
+  // 前缀回退，如 'zh-XX' → 'zh'
   const langPrefix = lang.split('-')[0]
   if (langMap[langPrefix]) {
     return langMap[langPrefix]
   }
 
-  // 默认中文
   return '/zh/'
 }
 
 /**
- * 判断给定路径是否是根路径（需要重定向）
+ * 判断给定路径是否是根路径（需要语言重定向）
+ * @param path - 当前路径，如 `/`、`/en/`
+ * @param base - VitePress base，如 `/`
+ * @returns true 表示需要重定向
  */
 export function isRootPath(path: string, base: string): boolean {
   const normalizedBase = base.endsWith('/') ? base : `${base}/`

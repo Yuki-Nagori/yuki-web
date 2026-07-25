@@ -1,3 +1,8 @@
+/**
+ * @file 语言检测工具单元测试
+ * @brief 覆盖 langMap 映射表、getLangPath 匹配逻辑、isRootPath 根路径判断
+ */
+
 import { describe, it, expect } from 'vitest'
 import { getLangPath, isRootPath, langMap } from '../docs/.vitepress/utils/lang'
 

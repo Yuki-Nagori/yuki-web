@@ -1,7 +1,12 @@
+/**
+ * @file VitePress 站点配置
+ * @brief 多语言、导航、侧边栏、Tailwind CSS 集成
+ * @see https://vitepress.dev/reference/site-config
+ */
+
 import { defineConfig } from 'vitepress'
 import tailwindcss from '@tailwindcss/vite'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],

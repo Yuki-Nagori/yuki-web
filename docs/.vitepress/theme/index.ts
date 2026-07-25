@@ -1,43 +1,45 @@
-// 扩展 VitePress 默认主题
+/**
+ * @file VitePress 自定义主题入口
+ * @brief 扩展默认主题，注入浏览器语言自动重定向逻辑
+ */
+
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { getLangPath, isRootPath } from '../utils/lang'
 import './style.css'
 
-// 执行语言重定向
-function redirectToLang(router: { go: (path: string) => void }, base: string) {
-  // 只在客户端执行
+/**
+ * 在根路径时根据浏览器语言重定向到对应的语言首页
+ * @param router - VitePress 路由实例
+ * @param base - VitePress base 配置
+ */
+function redirectToLang(router: { go: (path: string) => void }, base: string): void {
   if (typeof window === 'undefined') return
 
   const path = window.location.pathname
+  if (!isRootPath(path, base)) return
 
-  // 检查当前路径是否是根路径
-  if (isRootPath(path, base)) {
-    const lang =
-      navigator.language || (navigator as Navigator & { userLanguage?: string }).userLanguage
-    const langPath = getLangPath(lang)
+  const lang =
+    navigator.language || (navigator as Navigator & { userLanguage?: string }).userLanguage
+  const langPath = getLangPath(lang)
 
-    if (path !== langPath) {
-      router.go(langPath)
-    }
+  if (path !== langPath) {
+    router.go(langPath)
   }
 }
 
 export default {
   extends: DefaultTheme,
+
   enhanceApp({ app: _app, router, siteData }) {
-    // 在路由就绪后进行语言重定向
-    if (typeof window !== 'undefined') {
-      const base = siteData.value.base || '/'
+    if (typeof window === 'undefined') return
 
-      // 初始加载时检查
-      redirectToLang(router, base)
+    const base = siteData.value.base || '/'
+    redirectToLang(router, base)
 
-      // 监听路由变化
-      router.onAfterRouteChange = (to: string) => {
-        if (to === '/' || to === '/index.html') {
-          redirectToLang(router, base)
-        }
+    router.onAfterRouteChange = (to: string) => {
+      if (to === '/' || to === '/index.html') {
+        redirectToLang(router, base)
       }
     }
   },
