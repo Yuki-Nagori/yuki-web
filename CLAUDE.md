@@ -17,30 +17,30 @@ TypeScript + Tailwind CSS** 构建的多语言文档站点。
 # 安装依赖
 yarn install
 
-# 开发服务器（快速启动，lint/format 由 pre-commit hook 保证）
+# 开发服务器
 yarn docs:dev
 
-# 开发服务器（全量检查后启动，需要时可手动执行）
+# 开发服务器（全量检查）
 yarn docs:dev:full
 
-# 生产构建（type-check + test + build）
+# 生产构建
 yarn docs:build
 
 # 预览构建产物
 yarn docs:preview
 
-# 代码检查（ESLint + TypeScript + Vue）
+# ESLint
 yarn lint
 yarn lint:fix
 
-# 代码格式化（Prettier）
+# Prettier
 yarn format
 yarn format:check
 
 # TypeScript 类型检查
 yarn type-check
 
-# 运行测试
+# 测试
 yarn test
 ```
 
@@ -119,6 +119,20 @@ docs/
   - `.yml` 文件覆盖 `singleQuote: false`。
 - **TypeScript**：`tsconfig.json`，严格模式，路径别名 `@/*` →
   `./docs/.vitepress/*`，包含 `docs/.vitepress/**/*.{ts,vue,d.ts}`。
+
+## 注释规范
+
+1. **文档注释用 Doxygen 风格**：文件级、函数级说明用 `/** ... */` 或
+   `/*! ... */`，配合 `@file`、`@brief`、`@param`、`@return`、`@note`、`@par`
+   等标签，便于工具解析。中文撰写。
+
+2. **代码注释精简，避免冗余**：
+   - 函数内注释只写「为什么」（Why），不写「做什么」（What）——后者代码本身已表达。
+   - 不逐行复述代码。整段显而易见的逻辑不需注释。
+   - 一行注释能说清的不拆成多行段落。
+
+3. **版权块保持独立**：`MODULE / DESCRIPTION / COPYRIGHT / LICENSE`
+   标准版权块单独成块闭合，Doxygen 设计说明放在它之外（另起一个注释块），不混在一块。
 
 ## CI / 部署
 
