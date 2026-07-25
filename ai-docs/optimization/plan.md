@@ -144,12 +144,12 @@ docs/
 | `vue`                      | 已有                                                                | ✅     |
 | `@vueuse/core`             | Vue 组合式工具库（useFetch、useStorage、useDark、useMediaQuery 等） | ✅     |
 | `zod`                      | API 返回值运行时校验（TypeScript 类型编译后不保运行时安全）         | ✅     |
-| `pinia`                    | 跨组件状态管理（用户状态、后端数据缓存等）                          | 中     |
-| `@vueuse/head`             | 动态 head 管理（或直接用 VitePress 内建方案）                       | 中     |
-| `unplugin-vue-components`  | 自动导入组件                                                        | 中     |
-| `unplugin-icons`           | Iconify 图标组件化                                                  | 低     |
-| `vitepress-plugin-mermaid` | Mermaid 图表支持                                                    | 低     |
-| `markdown-it-container`    | 自定义 markdown 容器（提示框等，VitePress 已内建部分）              | 低     |
+| `pinia`                    | 跨组件状态管理（用户状态、后端数据缓存等）                          | 暂缓   |
+| `@vueuse/head`             | VitePress 原生支持 head，不需要                                     | 不需要 |
+| `unplugin-vue-components`  | 自动导入组件（暂无 Vue 组件，有组件后再装）                         | 暂缓   |
+| `unplugin-icons`           | Iconify 图标组件化（需要图标集时再装）                              | 暂缓   |
+| `vitepress-plugin-mermaid` | Mermaid 图表支持（需要画图时再装）                                  | 暂缓   |
+| `markdown-it-container`    | VitePress 内建 ::: tip/warning 已够用                               | 不需要 |
 
 > **关于 HTTP 请求**：不需要 `axios`。VueUse 的 `useFetch` + 浏览器原生 `fetch`
 > 已覆盖所有场景。后端建议使用 NestJS 或直接 Fastify/Express +
