@@ -1,6 +1,7 @@
 # Yuki Web
 
-Yuki 的个人网站，基于 **VitePress + TypeScript + Tailwind CSS** 构建的多语言文档站点。
+Yuki 的个人网站，基于 **VitePress + TypeScript + Tailwind CSS**
+构建的多语言文档站点。
 
 🌐 在线访问：[nagoriyuki.cn](https://www.nagoriyuki.cn)
 
@@ -52,11 +53,13 @@ yarn type-check     # TypeScript 类型检查
 ### 命令绑定说明
 
 `yarn docs:dev` 自动执行：
+
 1. `yarn lint:fix` — 自动修复 ESLint 问题
 2. `yarn format` — 格式化代码
 3. `vitepress dev docs` — 启动开发服务器
 
 `yarn docs:build` 自动执行：
+
 1. `yarn lint` — 检查 ESLint 问题（不通过则中断）
 2. `yarn format:check` — 检查代码格式（不通过则中断）
 3. `yarn type-check` — TypeScript 类型检查（不通过则中断）
@@ -86,7 +89,8 @@ yuki-web/
 
 ## 配置说明
 
-- **TypeScript**: `tsconfig.json` — 严格模式，路径别名 `@/*` → `docs/.vitepress/*`
+- **TypeScript**: `tsconfig.json` — 严格模式，路径别名 `@/*` →
+  `docs/.vitepress/*`
 - **ESLint**: `eslint.config.js` — flat config，集成 Vue + TypeScript
 - **Prettier**: `prettier.config.js` — 无分号、单引号、2 空格缩进
 - **VitePress**: `docs/.vitepress/config.mts` — 多语言配置、导航、侧边栏

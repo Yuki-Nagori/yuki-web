@@ -4,7 +4,8 @@
 
 ## 项目概述
 
-本项目是 **Yuki 个人网站**（`https://www.nagoriyuki.cn`），基于 **VitePress + TypeScript + Tailwind CSS** 构建的多语言文档站点。
+本项目是 **Yuki 个人网站**（`https://www.nagoriyuki.cn`），基于 **VitePress +
+TypeScript + Tailwind CSS** 构建的多语言文档站点。
 
 支持语言：简体中文（默认）、English、日本語、Français、Русский。
 
@@ -40,7 +41,8 @@ yarn type-check
 ### 命令绑定说明
 
 - **`yarn docs:dev`**：`lint:fix` → `format` → `vitepress dev docs`
-- **`yarn docs:build`**：`lint` → `format:check` → `type-check` → `vitepress build docs`
+- **`yarn docs:build`**：`lint` → `format:check` → `type-check` →
+  `vitepress build docs`
 
 ## 架构
 
@@ -72,31 +74,39 @@ docs/
 
 ### Tailwind CSS
 
-通过 `@tailwindcss/vite` 插件在 VitePress 中集成 Tailwind CSS v4，配置位于 `docs/.vitepress/config.mts` 的 `vite.plugins` 中。
+通过 `@tailwindcss/vite` 插件在 VitePress 中集成 Tailwind CSS v4，配置位于
+`docs/.vitepress/config.mts` 的 `vite.plugins` 中。
 
 ## 文件组织约定
 
 - **多语言内容**：放在对应语言目录 `docs/<locale>/` 下，文件名作为路由路径。
 - **主题和配置**：放在 `docs/.vitepress/` 下。
 - 文件名使用小写字母，连字符分隔（如 `my-notes.md`）。
-- 新内容添加到对应语言的目录下即可；在 `config.mts` 的 `locales.<locale>.themeConfig.nav` 和 `sidebar` 中添加导航条目。
+- 新内容添加到对应语言的目录下即可；在 `config.mts` 的
+  `locales.<locale>.themeConfig.nav` 和 `sidebar` 中添加导航条目。
 
 ## Lint 与格式化配置
 
-- **ESLint**：`eslint.config.js`（flat config），集成 `@eslint/js`、`typescript-eslint`、`eslint-plugin-vue`（flat/recommended）。
-  - 忽略 `dist/`、`node_modules/`、`.vitepress/cache/`、`.vitepress/dist/`、`*.md`。
+- **ESLint**：`eslint.config.js`（flat config），集成
+  `@eslint/js`、`typescript-eslint`、`eslint-plugin-vue`（flat/recommended）。
+  - 忽略
+    `dist/`、`node_modules/`、`.vitepress/cache/`、`.vitepress/dist/`、`*.md`。
   - `vue/multi-word-component-names` 已关闭。
-  - `no-console` / `no-debugger` 根据 `NODE_ENV` 动态切换（生产环境 warn，开发环境 off）。
+  - `no-console` / `no-debugger` 根据 `NODE_ENV`
+    动态切换（生产环境 warn，开发环境 off）。
   - `@typescript-eslint/no-explicit-any` 为 warn。
   - `@typescript-eslint/no-unused-vars` 为 error（`_` 前缀参数忽略）。
-- **Prettier**：`prettier.config.js`，配置 `semi: false`、`singleQuote: true`、`tabWidth: 2`、`trailingComma: 'es5'`、`printWidth: 100`、`endOfLine: 'lf'`、`arrowParens: 'always'`。
+- **Prettier**：`prettier.config.js`，配置
+  `semi: false`、`singleQuote: true`、`tabWidth: 2`、`trailingComma: 'es5'`、`printWidth: 100`、`endOfLine: 'lf'`、`arrowParens: 'always'`。
   - `.md` 文件覆盖 `proseWrap: 'always'`、`printWidth: 80`。
   - `.yml` 文件覆盖 `singleQuote: false`。
-- **TypeScript**：`tsconfig.json`，严格模式，路径别名 `@/*` → `./docs/.vitepress/*`，包含 `docs/.vitepress/**/*.{ts,vue,d.ts}`。
+- **TypeScript**：`tsconfig.json`，严格模式，路径别名 `@/*` →
+  `./docs/.vitepress/*`，包含 `docs/.vitepress/**/*.{ts,vue,d.ts}`。
 
 ## CI / 部署
 
-CI 使用 GitHub Actions（`.github/workflows/ci.yml`），在 `push` 和 `pull_request` 到 `main` 分支时触发：
+CI 使用 GitHub Actions（`.github/workflows/ci.yml`），在 `push` 和
+`pull_request` 到 `main` 分支时触发：
 
 1. Checkout 代码
 2. 安装 Node.js 22 + yarn 依赖（`--frozen-lockfile`）
@@ -116,6 +126,16 @@ git checkout -b <branch-name>
 ```
 
 ### 提交并创建 PR
+
+提交前务必通过质量检查（与 CI 一致）：
+
+```bash
+yarn lint          # ESLint 检查
+yarn format:check  # Prettier 格式检查
+yarn type-check    # TypeScript 类型检查
+```
+
+全部通过后再提交：
 
 ```bash
 git add -A
