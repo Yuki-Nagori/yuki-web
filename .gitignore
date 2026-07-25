@@ -3,6 +3,8 @@ dist/
 docs/.vitepress/cache
 .DS_Store
 .eslintcache
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 .idea/
 record/

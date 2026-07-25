@@ -49,10 +49,11 @@
 
 ### 1.3 编辑器与协作配置
 
-- [ ] 添加 `.editorconfig`（统一缩进、换行符、字符集）
-- [ ] 添加 `.vscode/settings.json`（format on save、默认 formatter 等）
-- [ ] 添加 `.vscode/extensions.json`（推荐 Volar、ESLint、Prettier、Tailwind CSS
+- [x] 添加 `.editorconfig`（统一缩进、换行符、字符集）
+- [x] 添加 `.vscode/settings.json`（format on save、默认 formatter 等）
+- [x] 添加 `.vscode/extensions.json`（推荐 Volar、ESLint、Prettier、Tailwind CSS
       IntelliSense）
+- [x] 调整 `.gitignore`：仅忽略 `.vscode` 个人配置，保留协作配置可提交
 
 ### 1.4 Pre-commit Hooks
 
