@@ -98,14 +98,13 @@
 
 ### 3.1 消除重复样式
 
-- [ ] 将各语言首页重复的 `<style>` 块提取到 `docs/.vitepress/theme/style.css`
-- [ ] 每个 locale 首页引用同一个全局样式
+- [x] 将各语言首页重复的 `<style>` 块提取到 `docs/.vitepress/theme/style.css`
+- [x] 从 5 个 locale 首页中移除 `<style>` 块
 
 ### 3.2 语言重定向逻辑整理
 
-- [ ] `docs/index.md` 和 `theme/index.ts` 中均有语言检测逻辑，存在重复
-- [ ] 保留 `theme/index.ts` 中的实现（更完整，含 SSR 兼容），`index.md`
-      简化为 loading 占位
+- [x] `theme/index.ts` 已在 Phase 1 提取到 `utils/lang.ts`，无需进一步处理
+- [x] `docs/index.md` 保留简洁的客户端重定向（作为无 JS 回退）
 
 ### 3.3 目录结构规范化
 
@@ -113,21 +112,26 @@
 docs/
 ├── .vitepress/
 │   ├── config.mts
+│   ├── i18n.ts                  # NEW: 多语言翻译表
 │   ├── theme/
 │   │   ├── index.ts
 │   │   ├── style.css
-│   │   └── components/        # 自定义 Vue 组件（未来扩展）
-│   └── utils/                  # 工具函数（语言检测等）
-├── public/                     # 静态资源
+│   │   └── components/          # 自定义 Vue 组件（未来扩展）
+│   └── utils/                   # 工具函数（语言检测等）
+├── public/                      # 静态资源
 ├── index.md
-├── zh/、en/、ja/、fr/、ru/    # 各语言内容
+├── zh/、en/、ja/、fr/、ru/     # 各语言内容
 ```
 
-### 3.4 共享组件抽取
+### 3.4 翻译表
 
-- [ ] 将 hero gradient CSS 抽取为 theme 全局样式
-- [ ] 创建可复用的 `FeatureCard` 组件（目前 5 个语言首页的 features
-      YAML 结构完全一致，可用组件替代）
+- [x] 创建 `docs/.vitepress/i18n.ts`，集中管理所有 UI 文案
+- [x] 添加 `t(lang)` 函数，config.mts 通过翻译表获取字符串
+- [x] config.mts 从 171 行精简至 ~120 行
+
+### 3.5 共享组件抽取
+
+- [ ] 创建可复用的 `FeatureCard` 组件（未来扩展时再做）
 
 ---
 
