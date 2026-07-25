@@ -170,19 +170,18 @@ docs/
 
 ### 5.1 各语言内容独立
 
-- [ ] 将 `zh/tailwind.md` 翻译为 en、ja、fr、ru 版本（或至少创建占位页面）
-- [ ] 各语言首页的 action link 和 feature link 指向自身语言路径
+- [x] 将 `zh/tailwind.md` 翻译为 en、ja、fr、ru 版本
+- [x] 各语言首页的 action link 和 feature link 指向自身语言路径
 
 ### 5.2 内容规划
 
-- [ ] `zh/` → 中文主力内容区
-- [ ] `en/` → 英文内容
-- [ ] 考虑添加 blog 功能（VitePress 内建 blog 主题支持）
+- [x] `zh/` → 中文主力内容区
+- [x] `en/`、`ja/`、`fr/`、`ru/` — 各语言 tailwind 页面均已有翻译
+- [ ] Blog 功能 — 后续需要时再启用（VitePress 内建支持）
 
 ### 5.3 导航一致性
 
-- [ ] 各语言 nav/sidebar 中的 Tailwind link 目前都指向
-      `/zh/tailwind`，改为各自语言路径
+- [x] 各语言 nav/sidebar 中的 Tailwind link 均指向各自语言路径
 
 ---
 
