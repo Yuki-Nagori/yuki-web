@@ -20,6 +20,7 @@
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.0.0",
     "vitepress": "^1.6.4",
+    "vitest": "^4.1.10",
     "vue": "^3.5.32",
     "vue-eslint-parser": "^10.0.0"
   },
@@ -29,8 +30,10 @@
   },
   "scripts": {
     "docs:dev": "yarn lint:fix && yarn format && vitepress dev docs",
-    "docs:build": "yarn lint && yarn format:check && yarn type-check && vitepress build docs",
+    "docs:build": "yarn lint && yarn format:check && yarn type-check && yarn test && vitepress build docs",
     "docs:preview": "vitepress preview docs",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"**/*.{js,ts,vue,md,json,yml}\"",
