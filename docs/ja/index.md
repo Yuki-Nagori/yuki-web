@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Tailwind CSS の使い方
-      link: /zh/tailwind
+      link: /ja/tailwind
 
 features:
   - icon: 🎨
@@ -16,6 +16,6 @@ features:
     details:
       ユーティリティクラスのクイックリファレンス —
       レイアウト、レスポンシブ、ダークモード、インタラクション状態、バッジなど。
-    link: /zh/tailwind
+    link: /ja/tailwind
     linkText: 詳細を見る →
 ---

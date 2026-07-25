@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Использование Tailwind CSS
-      link: /zh/tailwind
+      link: /ru/tailwind
 
 features:
   - icon: 🎨
@@ -16,6 +16,6 @@ features:
     details:
       Быстрая справка по служебным классам — вёрстка, адаптивность, тёмная тема,
       интерактивные состояния, значки и др.
-    link: /zh/tailwind
+    link: /ru/tailwind
     linkText: Подробнее →
 ---

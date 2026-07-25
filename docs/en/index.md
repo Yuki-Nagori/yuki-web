@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Tailwind CSS Usage
-      link: /zh/tailwind
+      link: /en/tailwind
 
 features:
   - icon: 🎨
@@ -16,6 +16,6 @@ features:
     details:
       Quick reference for utility classes — layout, responsive design, dark
       mode, interaction states, badges and more.
-    link: /zh/tailwind
+    link: /en/tailwind
     linkText: View details →
 ---
