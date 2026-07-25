@@ -160,7 +160,7 @@ CI 使用 GitHub Actions（`.github/workflows/ci.yml`），在 `push` 和
 仓库托管在 GitHub。使用 `gh` CLI 管理 PR。
 
 **禁止直接在 main 上 commit**。所有改动必须先切分支，通过 PR squash
-merge 到 main。
+merge 到 main。**PR 必须等 CI 全部通过后再 merge**，不可跳过 CI 直接合并。
 
 ### 创建分支
 
