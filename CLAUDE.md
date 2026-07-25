@@ -60,26 +60,34 @@ yarn test
 ```
 docs/
 ├── .vitepress/
-│   ├── config.mts          # 站点配置（多语言、导航、侧边栏）
+│   ├── config.mts          # 站点配置（thin layer，组装入口）
+│   ├── nav.ts              # 导航/侧边栏数据（加页面只改此文件）
+│   ├── config/
+│   │   ├── head.ts         # head 标签生成
+│   │   └── sitemap.ts      # sitemap.xml 生成
+│   ├── i18n/               # 固定 UI 翻译（docFooter、footer、SEO）
+│   │   ├── index.ts        # 类型 + t() 函数
+│   │   └── xx-XX.ts × 5    # 各语言翻译文件
 │   ├── theme/              # 自定义主题
-│   └── cache/              # 开发缓存（已 gitignore）
+│   └── utils/              # 工具函数（语言检测等）
+├── public/                 # 静态资源
 ├── index.md                # 根入口（浏览器语言检测重定向）
-├── zh/                     # 简体中文
-│   ├── index.md
-│   └── tailwind.md
-├── en/                     # English
-│   └── index.md
-├── ja/                     # 日本語
-│   └── index.md
-├── fr/                     # Français
-│   └── index.md
-└── ru/                     # Русский
-    └── index.md
+├── zh/、en/、ja/、fr/、ru/ # 各语言内容
 ```
 
-- 根 `index.md` 通过浏览器语言检测自动重定向到对应语言首页。
+- 根 `index.md` 通过浏览器语言检测自动重定向到对应语言首页（由 `theme/index.ts`
+  实现）。
 - 每个语言目录下的 markdown 文件即对应路由。
 - 构建产物输出到 `docs/dist/`。
+
+**修改指南：**
+
+| 场景               | 改动的文件                                              |
+| ------------------ | ------------------------------------------------------- |
+| 加一篇文章         | `nav.ts` 1 个文件                                       |
+| 加一种语言         | `i18n/xx-XX.ts` + `nav.ts` + `config.mts` 加一行 locale |
+| 改 footer/SEO 文案 | `i18n/xx-XX.ts`                                         |
+| 加站点功能         | `config/` 下新文件 + `config.mts` import                |
 
 ### Tailwind CSS
 
@@ -99,8 +107,7 @@ docs/
 - **多语言内容**：放在对应语言目录 `docs/<locale>/` 下，文件名作为路由路径。
 - **主题和配置**：放在 `docs/.vitepress/` 下。
 - 文件名使用小写字母，连字符分隔（如 `my-notes.md`）。
-- 新内容添加到对应语言的目录下即可；在 `config.mts` 的
-  `locales.<locale>.themeConfig.nav` 和 `sidebar` 中添加导航条目。
+- 新内容添加到对应语言目录后，在 `nav.ts` 中添加导航/侧边栏条目。
 
 ## Lint 与格式化配置
 
