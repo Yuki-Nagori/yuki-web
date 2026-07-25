@@ -130,7 +130,23 @@ gh pr create \
   --base main \
   --head <branch-name> \
   --title "<简要描述改动>" \
-  --body "<详细描述改动内容>"
+  --body "$(cat <<'EOF'
+## 改动概要
+
+简要描述本次改动的目的和范围。
+
+## 详细变更
+
+- 文件1：具体改动1
+- 文件2：具体改动2
+EOF
+)"
+```
+
+PR 描述使用中文，包含「改动概要」和「详细变更」两个部分，末尾附上：
+
+```
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
 ```
 
 如果未安装 GitHub CLI，可参照官方文档安装：https://cli.github.com/
