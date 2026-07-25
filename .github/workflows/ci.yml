@@ -26,12 +26,6 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Type check
-        run: yarn type-check
-
-      - name: Test
-        run: yarn test
-
       - name: Lint
         run: yarn lint
 
@@ -39,4 +33,4 @@ jobs:
         run: yarn format:check
 
       - name: Build
-        run: yarn vitepress build docs
+        run: yarn docs:build

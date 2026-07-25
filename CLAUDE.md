@@ -127,11 +127,9 @@ CI 使用 GitHub Actions（`.github/workflows/ci.yml`），在 `push` 和
 
 1. Checkout 代码
 2. 安装 Node.js 22 + yarn 依赖（`--frozen-lockfile`）
-3. TypeScript 类型检查
-4. 单元测试
-5. ESLint 检查
-6. Prettier 格式检查
-7. VitePress 构建
+3. ESLint 检查
+4. Prettier 格式检查
+5. `yarn docs:build`（含 type-check + test + build）
 
 ## Pre-commit Hooks
 
