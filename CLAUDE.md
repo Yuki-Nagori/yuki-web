@@ -122,9 +122,20 @@ CI 使用 GitHub Actions（`.github/workflows/ci.yml`），在 `push` 和
 1. Checkout 代码
 2. 安装 Node.js 22 + yarn 依赖（`--frozen-lockfile`）
 3. TypeScript 类型检查
-4. ESLint 检查
-5. Prettier 格式检查
-6. VitePress 构建
+4. 单元测试
+5. ESLint 检查
+6. Prettier 格式检查
+7. VitePress 构建
+
+## Pre-commit Hooks
+
+使用 `husky` + `lint-staged` 在提交前自动检查：
+
+- `*.{js,ts,vue}` → `eslint --fix` → `prettier --write`
+- `*.{md,json,yml}` → `prettier --write`
+
+配置在 `package.json` 的 `lint-staged` 字段中，hook 脚本位于
+`.husky/pre-commit`。
 
 ## Git 工作流
 

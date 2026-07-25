@@ -57,9 +57,9 @@
 
 ### 1.4 Pre-commit Hooks
 
-- [ ] 安装 `husky` + `lint-staged`
-- [ ] 配置 pre-commit：自动运行 `lint:fix` + `format` + `type-check`
-- [ ] 在 CLAUDE.md 补充说明
+- [x] 安装 `husky` + `lint-staged`
+- [x] 配置 pre-commit：自动运行 `eslint --fix` + `prettier --write` 于暂存文件
+- [x] 在 CLAUDE.md 补充说明
 
 ---
 
