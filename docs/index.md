@@ -3,14 +3,11 @@ layout: page
 ---
 
 <script setup>
+import { getLangPath } from './.vitepress/utils/lang'
+
 if (typeof window !== 'undefined') {
-  const lang = navigator.language?.toLowerCase() || ''
-  const target = lang.startsWith('zh') ? '/zh/'
-    : lang.startsWith('ja') ? '/ja/'
-    : lang.startsWith('fr') ? '/fr/'
-    : lang.startsWith('ru') ? '/ru/'
-    : '/en/'
-  window.location.replace(target)
+  const lang = navigator.language || ''
+  window.location.replace(getLangPath(lang))
 }
 </script>
 
