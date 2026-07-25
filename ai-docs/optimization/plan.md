@@ -67,25 +67,24 @@
 
 ### 2.1 public 静态资源
 
-- [ ] 创建 `docs/public/` 目录
-- [ ] 添加 `favicon.ico` / `favicon.svg`
-- [ ] 添加 `robots.txt`
-- [ ] 添加 `sitemap.xml`（或通过 vitepress 插件自动生成）
-- [ ] 添加 Open Graph 社交分享图 `og-image.png`
+- [x] 创建 `docs/public/` 目录
+- [x] 使用 PNG 作为 favicon（`link rel="icon"`，现代浏览器均支持）
+- [x] 添加 `robots.txt`
+- [x] 添加 `sitemap.xml`（通过 `sitemap` 包 + buildEnd hook 自动生成）
+- [x] 添加 Open Graph 社交分享图 `og-image.png`
 
 ### 2.2 SEO & Meta 配置
 
-- [ ] 在 `config.mts` 各 locale 中添加 `head` 配置：
+- [x] 在 `config.mts` 各 locale 中添加 `head` 配置：
   - `meta.description`、`meta.keywords`
   - Open Graph (`og:title`, `og:description`, `og:image`)
   - Twitter Card
-  - 各语言的 `htmlAttrs.lang`
-- [ ] 配置 `transformHead` 或在各 md 文件中添加 frontmatter `head`
+- [x] 全局 head：favicon、og:type、twitter:card 等共享标签
 
 ### 2.3 Sitemap 生成
 
-- [ ] 安装 `vitepress-plugin-sitemap`（或 `sitemap` npm 包自定义生成）
-- [ ] 在 `config.mts` 中配置 buildEnd hook 生成 sitemap
+- [x] 安装 `sitemap` 包
+- [x] 在 `config.mts` 中配置 buildEnd hook 生成 sitemap
 
 ### 2.4 部署方式
 
