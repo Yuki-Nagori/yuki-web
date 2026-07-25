@@ -36,6 +36,9 @@ yarn format:check
 
 # TypeScript 类型检查
 yarn type-check
+
+# 运行测试
+yarn test
 ```
 
 ### 命令绑定说明
@@ -76,6 +79,14 @@ docs/
 
 通过 `@tailwindcss/vite` 插件在 VitePress 中集成 Tailwind CSS v4，配置位于
 `docs/.vitepress/config.mts` 的 `vite.plugins` 中。
+
+**样式策略：Tailwind-first**
+
+- 内容样式、页面布局、组件 → 直接在 Markdown / Vue 组件中使用 Tailwind utility
+  class
+- VitePress 主题级定制（导航栏、品牌色等）→ VitePress CSS 变量（`--vp-c-*`）
+- `style.css` → 仅放 Tailwind 无法表达的必要自定义，保持精简
+- 禁止在 `.vue` 或 `.md` 中添加 `<style>` 块（除非确无 Tailwind 等价方案）
 
 ## 文件组织约定
 
