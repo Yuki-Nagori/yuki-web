@@ -46,3 +46,8 @@ jobs:
 
       - name: Build
         run: yarn docs:build
+
+      - name: Check dead links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --accept 200,429 docs/dist/

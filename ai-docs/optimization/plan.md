@@ -197,7 +197,7 @@ docs/
 ### 6.2 构建验证
 
 - [x] CI 通过 `yarn docs:build`（type-check + test + build）保证质量
-- [ ] Dead link check — 后续需要时添加
+- [x] Dead link check — 集成 lychee-action@v2
 
 ---
 
