@@ -35,7 +35,7 @@ export default defineConfig({
   },
 })
 
-function makeLocale(lang: string, link: string, label: string) {
+export function makeLocale(lang: string, link: string, label: string) {
   const $ = t(lang)
   const { nav, sidebar } = getNav(lang, link)
 

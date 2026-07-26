@@ -34,18 +34,18 @@ describe('t() 函数', () => {
 
   it('应返回法文翻译', () => {
     const $ = t('fr-FR')
-    expect($.docFooter.prev).toBeTruthy()
-    expect($.docFooter.next).toBeTruthy()
-    expect($.outline).toBeTruthy()
-    expect($.lastUpdated).toBeTruthy()
+    expect($.docFooter.prev).toBe('Précédent')
+    expect($.docFooter.next).toBe('Suivant')
+    expect($.outline).toBe('Sur cette page')
+    expect($.lastUpdated).toBe('Dernière mise à jour')
   })
 
   it('应返回俄文翻译', () => {
     const $ = t('ru-RU')
-    expect($.docFooter.prev).toBeTruthy()
-    expect($.docFooter.next).toBeTruthy()
-    expect($.outline).toBeTruthy()
-    expect($.lastUpdated).toBeTruthy()
+    expect($.docFooter.prev).toBe('Назад')
+    expect($.docFooter.next).toBe('Далее')
+    expect($.outline).toBe('Содержание')
+    expect($.lastUpdated).toBe('Последнее обновление')
   })
 
   it('未知语言应回退到 zh-CN', () => {

@@ -5,8 +5,7 @@
 
 import type { HeadConfig } from 'vitepress'
 import { t } from '../i18n/index'
-
-const BASE_URL = 'https://www.nagoriyuki.cn'
+import { BASE_URL } from './constants'
 
 /** 全局 head（所有语言共享） */
 export const globalHead: HeadConfig[] = [

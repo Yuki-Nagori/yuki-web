@@ -722,13 +722,13 @@ console.log(fibonacci(10)); // 55</code></pre>
 <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
   <div class="flex space-x-1 border-b border-gray-200 dark:border-gray-700 mb-4">
     <button class="px-4 py-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 dark:text-blue-400 dark:border-blue-400">
-      概览
+      Overview
     </button>
     <button class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-      设置
+      Settings
     </button>
     <button class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-      成员
+      Members
     </button>
   </div>
   <div class="space-y-4">
@@ -738,7 +738,7 @@ console.log(fibonacci(10)); // 55</code></pre>
     </div>
     <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
       <span class="text-gray-700 dark:text-gray-300">Created</span>
-      <span class="font-medium text-gray-900 dark:text-white">January 202415日</span>
+      <span class="font-medium text-gray-900 dark:text-white">January 2024</span>
     </div>
   </div>
 </div>
@@ -747,13 +747,13 @@ console.log(fibonacci(10)); // 55</code></pre>
 <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
   <div class="flex space-x-1 border-b border-gray-200 dark:border-gray-700 mb-4">
     <button class="px-4 py-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 dark:text-blue-400 dark:border-blue-400">
-      概览
+      Overview
     </button>
     <button class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-      设置
+      Settings
     </button>
     <button class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-      成员
+      Members
     </button>
   </div>
   <div class="space-y-4">
@@ -763,7 +763,7 @@ console.log(fibonacci(10)); // 55</code></pre>
     </div>
     <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
       <span class="text-gray-700 dark:text-gray-300">Created</span>
-      <span class="font-medium text-gray-900 dark:text-white">January 202415日</span>
+      <span class="font-medium text-gray-900 dark:text-white">January 2024</span>
     </div>
   </div>
 </div>
@@ -776,7 +776,7 @@ console.log(fibonacci(10)); // 55</code></pre>
 | Flex center        | `flex items-center justify-center`                                                                             |
 | Card style         | `bg-white shadow rounded-lg p-6`                                                                               |
 | Text gradient      | `bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500`                                   |
-| 悬浮Effect         | `hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`                                   |
+| Hover effect       | `hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`                                   |
 | Disabled state     | `opacity-50 cursor-not-allowed`                                                                                |
 | Circle avatar      | `w-10 h-10 rounded-full object-cover`                                                                          |
 | Input style        | `w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent` |
