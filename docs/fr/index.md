@@ -17,5 +17,5 @@ features:
       Référence rapide des classes utilitaires — mise en page, responsive, mode
       sombre, états d'interaction, badges, etc.
     link: /fr/tailwind
-    linkText: Voir les détails →
+    linkText: Voir les détails
 ---

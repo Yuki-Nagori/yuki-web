@@ -17,5 +17,5 @@ features:
       Quick reference for utility classes — layout, responsive design, dark
       mode, interaction states, badges and more.
     link: /en/tailwind
-    linkText: View details →
+    linkText: View details
 ---

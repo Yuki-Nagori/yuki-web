@@ -15,5 +15,5 @@ features:
     title: Tailwind CSS 用法集
     details: 实用类样式速查：布局、响应式、暗黑模式、交互状态、徽章等常用示例。
     link: /zh/tailwind
-    linkText: 查看详情 →
+    linkText: 查看详情
 ---
