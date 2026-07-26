@@ -5,8 +5,7 @@
 
 import { describe, it, expect } from 'vitest'
 import { globalHead, localeHead } from '../docs/.vitepress/config/head'
-
-const BASE_URL = 'https://www.nagoriyuki.cn'
+import { BASE_URL } from '../docs/.vitepress/config/constants'
 
 describe('globalHead', () => {
   it('应为非空数组', () => {

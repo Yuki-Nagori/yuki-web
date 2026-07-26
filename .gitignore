@@ -1,6 +1,8 @@
 node_modules/
 dist/
+docs/dist/
 docs/.vitepress/cache
+/coverage/
 .DS_Store
 .eslintcache
 .vscode/*

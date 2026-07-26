@@ -776,7 +776,7 @@ console.log(fibonacci(10)); // 55</code></pre>
 | Flex 中央配置    | `flex items-center justify-center`                                                                             |
 | カードスタイル   | `bg-white shadow rounded-lg p-6`                                                                               |
 | テキストグラデ   | `bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500`                                   |
-| 悬浮効果         | `hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`                                   |
-| 禁用状態         | `opacity-50 cursor-not-allowed`                                                                                |
+| ホバー効果       | `hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`                                   |
+| 無効状態         | `opacity-50 cursor-not-allowed`                                                                                |
 | 丸アバター       | `w-10 h-10 rounded-full object-cover`                                                                          |
 | 入力欄           | `w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent` |

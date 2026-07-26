@@ -5,28 +5,8 @@
 
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { getLangPath, isRootPath } from '../utils/lang'
+import { redirectToLang } from '../utils/redirect'
 import './style.css'
-
-/**
- * 在根路径时根据浏览器语言重定向到对应的语言首页
- * @param router - VitePress 路由实例
- * @param base - VitePress base 配置
- */
-function redirectToLang(router: { go: (path: string) => void }, base: string): void {
-  if (typeof window === 'undefined') return
-
-  const path = window.location.pathname
-  if (!isRootPath(path, base)) return
-
-  const lang =
-    navigator.language || (navigator as Navigator & { userLanguage?: string }).userLanguage
-  const langPath = getLangPath(lang)
-
-  if (path !== langPath) {
-    router.go(langPath)
-  }
-}
 
 export default {
   extends: DefaultTheme,
