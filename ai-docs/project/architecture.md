@@ -46,9 +46,12 @@ yuki-web/
 
 ## 当前结构
 
-当前应用仅包含 `src/main.ts`、`src/App.vue`、`src/style.css` 和
-`src/components/SiteFooter.vue`；footer 测试位于
-`tests/footer.test.ts`。上面的其他业务目录在需要时添加。
+应用入口为 `src/main.ts` 和 `src/App.vue`，首页在
+`src/views/home/HomeView.vue`。风格通过 `src/showcases/registry.ts`
+登记，首个已实现模块为
+`src/showcases/chinese-winter-plum/`，包含场景组件、基础 UI 和局部主题。网站公共组件包含
+`BrandLogo.vue` 与 `SiteFooter.vue`，测试放在
+`tests/`。未使用的其他业务目录按需要添加。
 
 ## 放置与依赖原则
 
