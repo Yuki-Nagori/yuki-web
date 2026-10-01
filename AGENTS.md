@@ -20,3 +20,4 @@
 ## 想法与计划
 
 - [001 · 中国古风：朱墙冬梅](ai-docs/plans/001-chinese-winter-plum.md)
+  - [朱墙冬梅 Logo](ai-docs/plans/001-logo.md)：设计、资源与网站接入配置。
