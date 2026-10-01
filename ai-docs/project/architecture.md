@@ -8,12 +8,14 @@ TypeScript 目录组织方式。以下为项目扩展时的参考结构；目录
 ```text
 yuki-web/
 ├── ai-docs/                  # 项目文档与技术栈准则
-│   ├── project/              # 开发指南、目录架构、编码约定
-│   └── standards/            # 按技术栈拆分的准则
+│   ├── project/              # 开发指南、目录架构、编码约定与首页设计
+│   ├── standards/            # 按技术栈拆分的准则
+│   └── plans/                # 各风格的想法与实现计划
 ├── public/                   # 原样复制到构建产物的静态资源
 ├── src/
 │   ├── assets/               # 通过 import 引入、由 Vite 处理的图片和字体等
 │   ├── components/           # 跨页面复用的 Vue 组件
+│   ├── showcases/            # 相对独立的风格展示模块，内含专属组件库
 │   ├── composables/          # 组合式函数，如 useTheme.ts
 │   ├── layouts/              # 页面共享布局
 │   ├── views/                # 页面组件；页面专用组件可放在页面子目录
@@ -58,3 +60,9 @@ yuki-web/
 - 类型优先靠近使用它的模块；跨模块共享的类型再放入 `types/`。
 - `public/` 中的资源用根路径引用，`src/assets/` 中的资源通过 import 引入。
 - `dist/` 和 `coverage/` 是生成产物，不放应用源码。
+
+## 风格展示模块
+
+首页展示的各风格放在
+`src/showcases/<风格名>/`，专属组件、样式和素材留在对应模块内。具体结构与整屏展示方式见
+[首页与风格展示](homepage.md)。

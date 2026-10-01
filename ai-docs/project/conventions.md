@@ -4,6 +4,8 @@
 
 - 应用代码放在 `src/`，复用组件放在 `src/components/`，测试放在 `tests/`。
 - 新增模块的位置参考 [目录架构](architecture.md)。
+- 风格专属组件库留在各自的 `src/showcases/<风格名>/ui/`，展示模块的组织见
+  [首页与风格展示](homepage.md)。
 
 ## 路径与依赖
 
